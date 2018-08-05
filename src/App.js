@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import './App.css';
-import MovieList from './MovieList';
+import React, { Component } from "react";
+import "./App.css";
+import { MovieList } from "./components";
 
-/* 
-Create react app to show a  grid of tv shows using the REST API 
+/*
+Create react app to show a  grid of tv shows using the REST API
 for the ajax call you can use any library you like I recommend axios
 display the result in a grid using HTML flexbox
 
@@ -13,7 +13,6 @@ https://www.npmjs.com/package/axios
 https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 */
 
-
 class App extends Component {
   render() {
     return (
@@ -21,9 +20,7 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Welcome to Movies</h1>
         </header>
-        <p className="App-intro">
-            <MovieList />
-        </p>
+        <MovieList />
       </div>
     );
   }
