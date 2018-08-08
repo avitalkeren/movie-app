@@ -1,12 +1,14 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 
 class MovieDetails extends Component {
-    state = { details: [] };
- 
+    state = { details: [], id: parseInt(this.props.match.params.id) };
+
     componentDidMount = () => {
+        console.log("the d is: " +  this.state.id);
         axios
-          .get("http://api.tvmaze.com/shows/" + this.props.movie_id)
+          .get("http://api.tvmaze.com/shows/" + this.state.id)
           .then(response => {
             this.setState({ details: response.data });
           })
@@ -17,6 +19,7 @@ class MovieDetails extends Component {
     
     render() {
       const { details } = this.state;
+    console.log(details);
 
       return (
         <div>
