@@ -5,7 +5,9 @@ class Movie extends Component {
     const { image } = this.props.movie;
     return (
       <div className="flex-container-item">
-        <img alt="poster" src={image.medium} />
+      <a href="">
+        <img alt="poster" src={image.medium}  />
+        </a>
       </div>
     );
   }
