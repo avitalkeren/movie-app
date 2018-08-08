@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import { MovieList } from "./components";
-import { Main } from './components'
+import { Main } from "./components";
 
 /*
 Create react app to show a  grid of tv shows using the REST API
@@ -21,7 +20,6 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Welcome to Movies</h1>
         </header>
-        <MovieList />
         <Main />
       </div>
     );
