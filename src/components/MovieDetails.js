@@ -28,12 +28,12 @@ class MovieDetails extends Component {
     console.log(details);
 
     return (
-      <div className="flex-container">
-        <h1>{details.name}</h1>
-        <div className="flex-container-item">
-        <img alt="poster" src={details.image.original} /></div>
-
-        <div className="flex-container-item" dangerouslySetInnerHTML={{__html: details.summary}}></div>
+      <div class="flex-container">
+        <header class="header"><h1>{details.name}</h1></header>
+        <article class="main">
+          <div dangerouslySetInnerHTML={{__html: details.summary}}></div>
+        </article>
+        <aside class="aside aside-2"><img alt="poster" src={details.image.original} /></aside>
       </div>
     );
   }
