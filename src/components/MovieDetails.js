@@ -29,10 +29,18 @@ class MovieDetails extends Component {
 
     return (
       <div class="flex-container">
+      <div className="flex-container-item">
         <header class="header"><h1>{details.name}</h1></header>
         <article class="main">
-          <div dangerouslySetInnerHTML={{__html: details.summary}}></div>
-        </article>
+          <p dangerouslySetInnerHTML={{__html: details.summary}}></p>
+          </article>
+          <p><b>Type: </b>{details.type}</p>
+          <p><b>Genres: </b>
+            <ul>
+              {details.genres.map(x => return {"<il>" + x +"</il>")}}
+            </ul>
+          </p>
+        </div>
         <aside class="aside aside-2"><img alt="poster" src={details.image.original} /></aside>
       </div>
     );
