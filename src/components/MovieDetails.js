@@ -26,14 +26,21 @@ class MovieDetails extends Component {
   render() {
     const { details } = this.state;
     console.log(details);
-
+    console.log(details.genres);
     return (
-      <div class="flex-container">
-        <header class="header"><h1>{details.name}</h1></header>
-        <article class="main">
-          <div dangerouslySetInnerHTML={{__html: details.summary}}></div>
-        </article>
-        <aside class="aside aside-2"><img alt="poster" src={details.image.original} /></aside>
+      <div className="flex-container">
+      <div className="flex-container-item">
+        <header className="header"><h1>{details.name}</h1></header>
+        <article className="main">
+          <p dangerouslySetInnerHTML={{__html: details.summary}}></p>
+          </article>
+          <p><b>Type: </b>{details.type}</p>
+          <b>Genres: </b>
+          <ul>
+              {details.genres}
+            </ul>
+        </div>
+        <aside className="aside aside-2"><img alt="poster" src={details.image.original} /></aside>
       </div>
     );
   }

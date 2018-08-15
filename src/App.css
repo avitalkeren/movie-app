@@ -9,16 +9,19 @@
 }
 
 .flex-container {
-  display: flex;  
-  flex-flow: row wrap;
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.flex-container > * {
-  padding: 10px;
-  flex: 1 100%;
+.flex-container-item {
+  margin: 3px;
 }
 
+.flex-container-col {
+  display: flex;
+  flex-direction: column;
+}
 
 
 @media all and (min-width: 600px) {
@@ -31,13 +34,4 @@
   .main    { order: 2; }
   .aside-2 { order: 3; }
   .footer  { order: 4; }
-}
-
-.flex-container-item {
-  margin: 3px;
-}
-
-.flex-container-col {
-  display: flex;
-  flex-direction: column;
 }
