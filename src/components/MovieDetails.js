@@ -37,8 +37,9 @@ class MovieDetails extends Component {
           <p><b>Type: </b>{details.type}</p>
           <b>Genres: </b>
           <ul>
-              {details.genres}
-            </ul>
+              {details.genres.map(gener => { return <li>{gener} </li>;}
+              )}
+          </ul>
         </div>
         <aside className="aside aside-2"><img alt="poster" src={details.image.original} /></aside>
       </div>
