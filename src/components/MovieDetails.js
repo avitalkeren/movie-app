@@ -6,7 +6,8 @@ class MovieDetails extends Component {
     details: {
       name: "",
       image: {},
-      summary: ""
+      summary: "",
+      genres: []
     },
     id: parseInt(this.props.match.params.id, 10)
   };
@@ -37,7 +38,7 @@ class MovieDetails extends Component {
           <p><b>Type: </b>{details.type}</p>
           <b>Genres: </b>
           <ul>
-              {details.genres.map(gener => { return <li>{gener} </li>;}
+              {details.genres.map(gener => { return <li key={gener}>{gener} </li>;}
               )}
           </ul>
         </div>
