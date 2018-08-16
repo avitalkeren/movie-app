@@ -7,7 +7,8 @@ class MovieDetails extends Component {
       name: "",
       image: {},
       summary: "",
-      genres: []
+      genres: [], 
+      rating: {average: ""},
     },
     id: parseInt(this.props.match.params.id, 10)
   };
@@ -27,7 +28,7 @@ class MovieDetails extends Component {
   render() {
     const { details } = this.state;
     console.log(details);
-    console.log(details.genres);
+   
     return (
       <div className="flex-container">
       <div className="flex-container-item">
@@ -38,9 +39,10 @@ class MovieDetails extends Component {
           <p><b>Type: </b>{details.type}</p>
           <b>Genres: </b>
           <ul>
-              {details.genres.map(gener => { return <li key={gener}>{gener} </li>;}
-              )}
+              {details.genres.map(gener => (<li key={gener}>{gener} </li>))}
           </ul>
+          <p><b>Rating:</b>{details.rating.average}</p>
+          <p><b>Official Site: </b><a href={details.officialSite}>{details.officialSite}</a></p>
         </div>
         <aside className="aside aside-2"><img alt="poster" src={details.image.original} /></aside>
       </div>
