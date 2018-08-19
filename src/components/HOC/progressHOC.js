@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import "./progressHOC.css";
 
 const isEmpty = (prop) => (
     prop === null ||
@@ -9,9 +9,10 @@ const isEmpty = (prop) => (
   );
 
 const progressHOC = (propName) => (wrrappedComponent) => {
-    reutn class progressHOC extends Component {
+    return class progressHOC extends Component {
         render(){
-           return isEmpty(this.props[propName]) ? <div className = "loader"/> : <wrrappedComponent {...this.props} />; 
+            console.log(isEmpty(this.state));
+            return (isEmpty(this.state) || isEmpty(this.state[propName])) ? <div className = "spinner"/> : <wrrappedComponent {...this.props} />; 
         }
     }
 }
